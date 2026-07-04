@@ -1,0 +1,71 @@
+namespace Inventory.Application.Features.Medicine.DTOs;
+
+public record MedicineDto(
+    int Id,
+    string MedicineName,
+    string GenericName,
+    string BrandName,
+    string? Strength,
+    string? DosageForm,
+    int CategoryId,
+    int ManufacturerId,
+    int UnitId,
+    string? HSNCode,
+    decimal GSTPercentage,
+    string? StorageCondition,
+    bool PrescriptionRequired,
+    bool Status,
+    DateTime CreatedAt,
+    string? CreatedBy,
+    DateTime? UpdatedAt,
+    string? UpdatedBy);
+
+public record CreateMedicineRequest(
+    string MedicineName,
+    string GenericName,
+    string BrandName,
+    string? Strength,
+    string? DosageForm,
+    int CategoryId,
+    int ManufacturerId,
+    int UnitId,
+    string? HSNCode,
+    decimal GSTPercentage,
+    string? StorageCondition,
+    bool PrescriptionRequired,
+    bool Status = true);
+
+public record UpdateMedicineRequest(
+    int Id,
+    string MedicineName,
+    string GenericName,
+    string BrandName,
+    string? Strength,
+    string? DosageForm,
+    int CategoryId,
+    int ManufacturerId,
+    int UnitId,
+    string? HSNCode,
+    decimal GSTPercentage,
+    string? StorageCondition,
+    bool PrescriptionRequired,
+    bool Status);
+
+public record MedicineResponse(
+    int Id,
+    string MedicineName,
+    string GenericName,
+    string BrandName,
+    string? Strength,
+    string? DosageForm,
+    int CategoryId,
+    string? CategoryName,
+    int ManufacturerId,
+    string? ManufacturerName,
+    int UnitId,
+    string? UnitName,
+    string? HSNCode,
+    decimal GSTPercentage,
+    string? StorageCondition,
+    bool PrescriptionRequired,
+    bool Status);
