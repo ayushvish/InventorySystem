@@ -22,7 +22,7 @@ public class AuthController : ControllerBase
     public ActionResult<ApiResponse<LoginResponse>> Login([FromBody] LoginRequest request)
     {
         // For basic authentication, we validate hardcoded/seeded admin credentials
-        if (request.Username == "admin" && request.Password == "Admin123")
+        if (request.Username == "admin@pharmacy.com" && request.Password == "Admin123")
         {
             var permissions = new[] { Permissions.Read, Permissions.Write, Permissions.Delete };
             var token = _jwtTokenGenerator.GenerateToken(
